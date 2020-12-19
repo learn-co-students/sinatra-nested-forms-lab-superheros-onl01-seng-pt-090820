@@ -1,13 +1,10 @@
-<h1><%= @team_name %></h1>
-<h2>Team Motto: <%= @team_motto %></h2>
+<h1><%= params[:team][:name] %></h1><br>
 
-<% @team_members.each.with_index do |hero, index| %>
-  <h2>Hero Name: <%= @hero_name[index] %></h2>
-  <p>
-    Hero power: <%= @hero_power[index] %>
-    <br>
-    Hero biography: <%= @hero_bio[index] %>
-  </p>
+<h2>Team Motto: <%= params[:team][:motto]%></h2><br>
+
+<% params[:team][:members].each do |hero|%>
+  <h2>Hero Name: <%= hero[:name] %></h2>
+  <h3>Hero Power: <%= hero[:power] %></h3><br>
+  <h3>Hero Biography: <%= hero[:biography] %></h3><br><br>
 <% end %>
-
-
+<h2></h2>
